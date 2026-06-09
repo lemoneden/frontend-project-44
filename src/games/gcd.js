@@ -15,7 +15,7 @@ const runGcdGame = () => {
     }
   }
 
-  gcd = FirstRandomNum
+  gcd = String(FirstRandomNum)
 
   return { question, correctAnswer: gcd }
 }
