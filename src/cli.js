@@ -10,7 +10,10 @@ const questionName = () => {
 const minValue = 1
 const maxValue = 100
 const getRandomNum = (min = minValue, max = maxValue) => {
-  return Math.floor(Math.random() * max) + min
+  const array = new Uint32Array(1)
+  crypto.getRandomValues(array)
+  const fraction = array[0] / (0xffffffff + 1)
+  return Math.floor(fraction * (max - min + 1)) + min
 }
 
 export { questionName, getRandomNum }
